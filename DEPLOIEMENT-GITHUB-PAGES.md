@@ -80,20 +80,9 @@ Statuts recommandes :
 - `prochainement`
 - `a-valider`
 
-## Mise a jour des emails autorises
+## Donnees des participants
 
-Le fichier de configuration est :
-
-```text
-assets/js/config.js
-```
-
-On peut autoriser :
-
-- des emails precis ;
-- des domaines complets.
-
-Important : cette barriere est utile pour orienter l'utilisateur, mais elle n'est pas une securite forte car le site GitHub Pages reste statique.
+Ne jamais ajouter d'emails de participants dans `assets/js/config.js` ou dans un autre fichier publie. GitHub Pages est statique et tous ses fichiers sont publics. Utiliser le depot prive pour les comptes GitHub autorises et Drive restreint pour le partage direct par email.
 
 ## Option fiable pour vrai acces prive
 
@@ -101,7 +90,7 @@ Pour une autorisation reelle par email, utiliser un service d'authentification d
 
 - Cloudflare Access ;
 - Google Workspace / Apps Script avec verification ;
-- site prive dans un depot GitHub limite aux membres ;
+- depot GitHub prive limite aux comptes membres ;
 - plateforme avec authentification integree.
 
 GitHub Pages seul ne peut pas verifier un utilisateur cote serveur.

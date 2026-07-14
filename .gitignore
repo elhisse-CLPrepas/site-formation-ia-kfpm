@@ -1,5 +1,7 @@
-.DS_Store
-Thumbs.db
-*.tmp
-*.bak
-node_modules/
+# Ne jamais publier les donnees personnelles des participants
+prive/
+liste-participants*.xlsx
+*participants*.csv
+*inscrits*.xlsx
+*inscrits*.csv
+*emails*.txt
