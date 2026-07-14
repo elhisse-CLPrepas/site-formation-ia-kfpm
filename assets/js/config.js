@@ -1,12 +1,6 @@
+// Configuration publique uniquement. Ne jamais ajouter ici les donnees
+// personnelles des participants : tout fichier GitHub Pages est public.
 window.KFPM_SITE_CONFIG = {
-  allowedEmails: [
-    "demo@kfpm.ma"
-  ],
-  allowedDomains: [
-    "kfpm.ma",
-    "kpm.ma",
-    "fpm.ma",
-    "ln-ia.ma"
-  ],
-  requestAccessEmail: "contact@ln-ia.ma"
+  requestAccessEmail: "contact@ln-ia.ma",
+  participantDriveUrl: "https://drive.google.com/drive/folders/1pNdrO-SLxxsMCaijFAoCHGLCMgkVBywz?usp=drive_link"
 };

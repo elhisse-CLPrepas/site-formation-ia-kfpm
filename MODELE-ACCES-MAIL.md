@@ -6,9 +6,9 @@ GitHub Pages est un hebergement statique. Il ne peut pas garantir seul un acces 
 
 Le mini site contient donc deux niveaux possibles.
 
-## Niveau 1 - Acces pedagogique simple
+## Ancien niveau 1 - A ne pas utiliser pour des donnees reservees
 
-Ce niveau est deja integre dans le site.
+Ce mecanisme cote navigateur a ete retire du site : une liste d'emails placee dans JavaScript serait elle-meme publique et ne constituerait pas une validation d'identite.
 
 Fonctionnement :
 
@@ -17,11 +17,7 @@ Fonctionnement :
 - si l'email ou le domaine est reconnu, les sections de formation deviennent visibles ;
 - l'autorisation est gardee dans le navigateur.
 
-Fichier a modifier :
-
-```text
-docs/assets/js/config.js
-```
+Ne jamais placer les emails des participants dans un fichier publie.
 
 Ce niveau est adapte pour :
 
@@ -75,8 +71,10 @@ Avantages :
 
 Demarrage :
 
-- utiliser le niveau 1 pour les modules essentiels ;
-- ne publier aucun contenu sensible ;
+- publier uniquement les modules explicitement publics ;
+- ne publier aucun contenu sensible ni aucune donnee personnelle ;
+- inviter les comptes GitHub dans le depot prive ;
+- partager les supports Drive directement avec les emails valides ;
 - enrichir `content.js` progressivement ;
 - garder les documents sensibles dans Google Drive ou depot prive.
 

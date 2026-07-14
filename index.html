@@ -24,11 +24,11 @@
   <main id="accueil">
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Mini site prive pedagogique</p>
+        <p class="eyebrow">Portail public pedagogique</p>
         <h1>Former l'equipe KFPM a produire avec IA, methode et validation humaine.</h1>
         <p class="lead">Un espace simple pour partager les modules essentiels, les supports, les prompts et les prochaines ressources demandees par le groupe.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#acces">Entrer avec mon email</a>
+          <a class="button primary" href="#acces">Acces participants</a>
           <a class="button secondary" href="#formation">Voir le contenu disponible</a>
         </div>
       </div>
@@ -44,22 +44,23 @@
       <div class="section-inner access-layout">
         <div>
           <p class="section-kicker">Acces membres</p>
-          <h2>Autorisation par email pour orienter l'utilisateur.</h2>
-          <p>GitHub Pages ne gere pas une authentification serveur. Ce portail propose donc une autorisation automatique cote interface pour demarrer rapidement. Pour une vraie restriction privee, utiliser l'une des options indiquees dans la documentation de deploiement.</p>
+          <h2>Un portail public, des supports reserves proteges.</h2>
+          <p>Cette page ne collecte et ne verifie aucun email. Les participants valides recoivent directement les liens prives vers le depot GitHub et les supports Drive. Aucune donnee personnelle n'est publiee sur GitHub Pages.</p>
         </div>
         <form class="access-card" id="accessForm">
-          <label for="email">Email autorise</label>
+          <label for="email">Demander ou signaler un probleme d'acces</label>
           <div class="input-row">
             <input id="email" name="email" type="email" autocomplete="email" placeholder="nom@exemple.com" required>
-            <button class="button primary" type="submit">Valider</button>
+            <button class="button primary" type="submit">Preparer la demande</button>
           </div>
-          <p class="hint" id="accessMessage">Entrez votre email de groupe pour charger l'espace formation.</p>
-          <button class="text-button" type="button" id="resetAccess">Changer d'utilisateur</button>
+          <p class="hint" id="accessMessage">Votre email sert uniquement a preparer un message ; il n'est ni stocke ni envoye par ce site.</p>
+          <p class="hint"><a href="FORMULAIRE-COLLECTE-MEMBRES-KFPM.md">Formulaire de collecte des membres</a></p>
+          <p class="hint"><a href="00_GENERER_DANS_ATELIER/formulaire-individuel-membre-formation-ia-kfpm.xlsx">Modele Excel individuel a remplir</a></p>
         </form>
       </div>
     </section>
 
-    <section id="formation" class="content-band locked" data-protected>
+    <section id="formation" class="content-band">
       <div class="section-inner">
         <div class="section-heading">
           <div>
@@ -77,7 +78,7 @@
       </div>
     </section>
 
-    <section id="methode" class="method-band locked" data-protected>
+    <section id="methode" class="method-band">
       <div class="section-inner two-col">
         <div>
           <p class="section-kicker">Methode LN-IA</p>
@@ -94,7 +95,7 @@
       </div>
     </section>
 
-    <section id="ressources" class="content-band locked" data-protected>
+    <section id="ressources" class="content-band">
       <div class="section-inner">
         <div class="section-heading">
           <div>
@@ -103,6 +104,7 @@
           </div>
         </div>
         <div class="resource-list">
+          <a id="participantDriveLink" href="#" target="_blank" rel="noopener noreferrer">Espace Google Drive des participants — acces reserve</a>
           <a href="ressources/plan-formation-equipe-kfpm.md">Plan de formation equipe KFPM</a>
           <a href="ressources/banque-prompts-pub-kfpm.md">Banque de prompts PUB-KFPM</a>
           <a href="ressources/methode-production-7-etapes.md">Methode de production en 7 etapes</a>
