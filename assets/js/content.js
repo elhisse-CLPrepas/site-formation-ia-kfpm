@@ -1,44 +1,52 @@
-window.KFPM_MODULES = [
-  {
-    title: "Comprendre l'IA utile",
-    category: "essentiel",
-    duration: "20 min",
-    status: "disponible",
-    summary: "Role de l'IA dans l'atelier KFPM : acceleration, clarification, controle humain et validation."
-  },
-  {
-    title: "Ecrire un brief clair",
-    category: "essentiel",
-    duration: "20 min",
-    status: "disponible",
-    summary: "Objectif, public cible, message central, format, canal, responsable, date et indicateur."
-  },
-  {
-    title: "Produire un message WhatsApp",
-    category: "atelier",
-    duration: "25 min",
-    status: "disponible",
-    summary: "Production d'un message court pour parents ou candidats, avec correction et validation."
-  },
-  {
-    title: "Corriger une production IA",
-    category: "atelier",
-    duration: "25 min",
-    status: "disponible",
-    summary: "Verifier exactitude, sobriete, distinction KPM/FPM/KFPM et adaptation au public."
-  },
-  {
-    title: "Suivre les publications",
-    category: "suivi",
-    duration: "30 min",
-    status: "prochainement",
-    summary: "Relier les contenus aux reactions, leads, rendez-vous et decisions."
-  },
-  {
-    title: "Mini-rapport hebdomadaire",
-    category: "suivi",
-    duration: "30 min",
-    status: "prochainement",
-    summary: "Transformer les donnees de la semaine en decisions courtes pour les gerants."
-  }
+window.CHALLENGE_PHASES = [
+  { id: 1, days: "Jours 1–14", missions: "M01–M06", title: "Démarrer en sécurité", text: "Installer les outils, protéger ses comptes et adopter le cadre collectif.", color: "mint" },
+  { id: 2, days: "Jours 15–35", missions: "M07–M15", title: "Produire avec l’IA", text: "Concevoir de bons prompts, vérifier et créer des contenus professionnels.", color: "blue" },
+  { id: 3, days: "Jours 36–65", missions: "M16–M27", title: "Agir pour KFPM", text: "Transformer les compétences en campagnes, messages et résultats utiles.", color: "orange" },
+  { id: 4, days: "Jours 66–85", missions: "M28–M36", title: "Collaborer moderne", text: "Travailler avec GitHub, documenter les preuves et faire valider.", color: "violet" },
+  { id: 5, days: "Jours 86–100", missions: "M37–M42", title: "Projet final", text: "Résoudre un problème réel, constituer son portfolio et présenter.", color: "coral" }
 ];
+
+window.CHALLENGE_MISSIONS = [
+  ["M01",1,"Définir son objectif","Fiche objectif personnel"],
+  ["M02",1,"Diagnostiquer son niveau IA","Autoévaluation initiale"],
+  ["M03",1,"Protéger ses comptes et données","Checklist sécurité"],
+  ["M04",1,"Installer et vérifier les outils","Compte rendu d’installation"],
+  ["M05",1,"Découvrir les espaces du challenge","Preuve d’accès"],
+  ["M06",1,"Adopter le cadre collectif","Charte participant"],
+  ["M07",2,"Comprendre les limites de l’IA","Fiche de vigilance"],
+  ["M08",2,"Écrire un prompt structuré","Prompt documenté"],
+  ["M09",2,"Itérer et améliorer une réponse","Comparatif avant/après"],
+  ["M10",2,"Vérifier les faits et les sources","Grille de vérification"],
+  ["M11",2,"Rédiger un email professionnel","Email relu"],
+  ["M12",2,"Produire un message WhatsApp","Message ciblé"],
+  ["M13",2,"Résumer un document","Synthèse d’une page"],
+  ["M14",2,"Concevoir un brief visuel","Brief exploitable"],
+  ["M15",2,"Créer son mini-portfolio","Trois premières preuves"],
+  ["M16",3,"Comprendre KPM, FPM et KFPM","Carte des publics"],
+  ["M17",3,"Définir un objectif de communication","Brief de campagne"],
+  ["M18",3,"Rédiger une publication","Publication validée"],
+  ["M19",3,"Préparer une affiche","Brief et proposition"],
+  ["M20",3,"Construire une séquence WhatsApp","Trois messages"],
+  ["M21",3,"Répondre aux familles","Mini-FAQ contrôlée"],
+  ["M22",3,"Préparer un argumentaire","Script de réponse"],
+  ["M23",3,"Organiser un calendrier éditorial","Planning sur deux semaines"],
+  ["M24",3,"Qualifier un prospect avec prudence","Fiche de suivi conforme"],
+  ["M25",3,"Mesurer les conversions","Tableau d’indicateurs"],
+  ["M26",3,"Analyser une campagne","Bilan et recommandations"],
+  ["M27",3,"Présenter une production","Présentation Zoom"],
+  ["M28",4,"Comprendre fichiers et versions","Carte du flux GitHub"],
+  ["M29",4,"Lire et commenter dans GitHub","Commentaire constructif"],
+  ["M30",4,"Modifier sur une branche","Premier commit"],
+  ["M31",4,"Proposer une pull request","PR documentée"],
+  ["M32",4,"Relire avec des critères","Rapport de revue"],
+  ["M33",4,"Comprendre les tests","Contrôle expliqué"],
+  ["M34",4,"Constituer une preuve complète","Preuve documentée"],
+  ["M35",4,"Transmettre entre humain et agent","Fiche de transmission"],
+  ["M36",4,"Valider collectivement","Décision consignée"],
+  ["M37",5,"Choisir un problème utile","Note d’intention"],
+  ["M38",5,"Cadrer le projet final","Cahier de mission"],
+  ["M39",5,"Produire une première version","Prototype ou campagne V1"],
+  ["M40",5,"Tester, relire et corriger","Rapport de validation"],
+  ["M41",5,"Finaliser son portfolio","Portfolio commenté"],
+  ["M42",5,"Soutenir et tirer le bilan","Présentation finale"]
+].map(([id, phase, title, deliverable]) => ({ id, phase, title, deliverable }));

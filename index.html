@@ -3,121 +3,172 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Formation IA KFPM</title>
-  <meta name="description" content="Mini site GitHub Pages pour partager la formation IA avec les membres du groupe KFPM.">
+  <meta name="theme-color" content="#081426">
+  <title>Challenge IA KFPM 2026 — 100 jours pour progresser</title>
+  <meta name="description" content="Découvrez le Challenge IA KFPM : 100 jours, 42 missions, trois missions par semaine et un accompagnement Zoom hebdomadaire.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
   <header class="topbar">
-    <a class="brand" href="#accueil" aria-label="Accueil Formation IA KFPM">
-      Formation IA
-      <span>KFPM_LN-IA_2026 </span>
+    <a class="brand" href="#accueil" aria-label="Accueil Challenge IA KFPM">
+      <span class="brand-mark">IA</span>
+      <span><strong>Challenge IA KFPM</strong><small>Édition 2026 · 100 jours</small></span>
     </a>
-    <nav aria-label="Navigation principale">
-      <a href="#formation">Formation</a>
-      <a href="#methode">Methode</a>
-      <a href="#ressources">Ressources</a>
-      <a href="#acces">Acces</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu</button>
+    <nav id="navigation" aria-label="Navigation principale">
+      <a href="#programme">Programme</a>
+      <a href="#methode">Méthode</a>
+      <a href="#missions">Missions</a>
+      <a href="#accompagnement">Accompagnement</a>
+      <a class="nav-cta" href="https://clprepas.com/portail-ia-kfpm">Portail participant</a>
     </nav>
   </header>
 
-  <main id="accueil">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Portail public pedagogique</p>
-        <h1>Former l'equipe KFPM a produire avec IA, methode et validation humaine.</h1>
-        <p class="lead">Un espace simple pour partager les modules essentiels, les supports, les prompts et les prochaines ressources demandees par le groupe.</p>
+  <main id="contenu">
+    <section class="hero" id="accueil">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> Les inscriptions se préparent</p>
+        <h1>100 jours pour passer de la curiosité à la <em>maîtrise utile</em> de l’IA.</h1>
+        <p class="hero-lead">Un parcours hybride, concret et accompagné pour apprendre, produire et collaborer avec l’intelligence artificielle au service de KFPM.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#acces">Acces participants</a>
-          <a class="button secondary" href="#formation">Voir le contenu disponible</a>
+          <a class="button button-primary" href="#programme">Découvrir le challenge</a>
+          <a class="button button-ghost" href="https://clprepas.com/portail-ia-kfpm">Accéder au portail <span aria-hidden="true">↗</span></a>
         </div>
+        <dl class="hero-stats" aria-label="Chiffres clés du challenge">
+          <div><dt>100</dt><dd>jours pour progresser</dd></div>
+          <div><dt>42</dt><dd>missions concrètes</dd></div>
+          <div><dt>3×</dt><dd>missions par semaine</dd></div>
+          <div><dt>1×</dt><dd>Zoom chaque mercredi</dd></div>
+        </dl>
       </div>
-      <aside class="status-panel" aria-label="Etat du portail">
-        <strong>Etat du contenu</strong>
-        <span id="moduleCount">Chargement...</span>
-        <span>Acces progressif par groupe</span>
-        <span>Validation humaine avant publication</span>
-      </aside>
+      <div class="hero-note">
+        <span class="pulse"></span>
+        <div><strong>Prochain rendez-vous</strong><span>Chaque mercredi · 20 h GMT+1</span></div>
+      </div>
     </section>
 
-    <section id="acces" class="access-band">
-      <div class="section-inner access-layout">
+    <section class="intro section">
+      <div class="section-grid intro-grid">
         <div>
-          <p class="section-kicker">Acces membres</p>
-          <h2>Un portail public, des supports reserves proteges.</h2>
-          <p>Cette page ne collecte et ne verifie aucun email. Les participants valides recoivent directement les liens prives vers le depot GitHub et les supports Drive. Aucune donnee personnelle n'est publiee sur GitHub Pages.</p>
+          <p class="kicker">Un challenge, pas un cours de plus</p>
+          <h2>Apprendre en faisant. Progresser en prouvant.</h2>
         </div>
-        <form class="access-card" id="accessForm">
-          <label for="email">Demander ou signaler un probleme d'acces</label>
-          <div class="input-row">
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="nom@exemple.com" required>
-            <button class="button primary" type="submit">Preparer la demande</button>
-          </div>
-          <p class="hint" id="accessMessage">Votre email sert uniquement a preparer un message ; il n'est ni stocke ni envoye par ce site.</p>
-          <p class="hint"><a href="FORMULAIRE-COLLECTE-MEMBRES-KFPM.md">Formulaire de collecte des membres</a></p>
-          <p class="hint"><a href="00_GENERER_DANS_ATELIER/formulaire-individuel-membre-formation-ia-kfpm.xlsx">Modele Excel individuel a remplir</a></p>
-        </form>
+        <div class="intro-copy">
+          <p>Le Challenge IA KFPM transforme chaque semaine en cycle d’apprentissage : comprendre une idée, la mettre en pratique, puis produire un livrable utile. Les participants avancent ensemble, avec un cadre clair et une validation humaine.</p>
+          <p class="quote">« L’IA propose. Le participant vérifie. Le groupe relit. Le responsable valide. »</p>
+        </div>
       </div>
     </section>
 
-    <section id="formation" class="content-band">
-      <div class="section-inner">
+    <section class="programme section" id="programme">
+      <div class="section-grid">
         <div class="section-heading">
-          <div>
-            <p class="section-kicker">Modules essentiels</p>
-            <h2>Contenu reduit au depart, extensible selon les besoins.</h2>
-          </div>
-          <div class="filter-group" role="group" aria-label="Filtrer les modules">
-            <button class="filter active" type="button" data-filter="all">Tous</button>
-            <button class="filter" type="button" data-filter="essentiel">Essentiel</button>
-            <button class="filter" type="button" data-filter="atelier">Atelier</button>
-            <button class="filter" type="button" data-filter="suivi">Suivi</button>
-          </div>
+          <div><p class="kicker">Le parcours des 100 jours</p><h2>Cinq phases. Une progression visible.</h2></div>
+          <p>Du premier diagnostic au projet final, chaque phase développe une capacité observable et prépare la suivante.</p>
         </div>
-        <div class="module-grid" id="moduleGrid" aria-live="polite"></div>
+        <div class="phase-list" id="phaseList"></div>
       </div>
     </section>
 
-    <section id="methode" class="method-band">
-      <div class="section-inner two-col">
-        <div>
-          <p class="section-kicker">Methode LN-IA</p>
-          <h2>L'IA propose. L'humain controle. L'institution valide.</h2>
-          <p>Chaque contenu de formation ou de communication suit une chaine courte : brief, production, correction, validation, publication, suivi, amelioration.</p>
+    <section class="rhythm section">
+      <div class="section-grid rhythm-grid">
+        <div class="rhythm-copy">
+          <p class="kicker light">Votre rythme hebdomadaire</p>
+          <h2>Trois temps pour ancrer chaque compétence.</h2>
+          <p>Un rythme soutenu mais réaliste, pensé pour les professionnels et les stagiaires.</p>
         </div>
-        <ol class="steps">
-          <li><strong>Brief</strong><span>Objectif, public, format, canal et indicateur.</span></li>
-          <li><strong>Production IA</strong><span>Premiere version utile, sans information inventee.</span></li>
-          <li><strong>Correction</strong><span>Controle de clarte, exactitude et ton institutionnel.</span></li>
-          <li><strong>Validation</strong><span>Accord humain avant partage ou publication.</span></li>
-          <li><strong>Suivi</strong><span>Retours, questions, progression et prochaines demandes.</span></li>
+        <ol class="week-flow">
+          <li><span>01</span><div><strong>Comprendre</strong><p>Découvrir une notion et observer un exemple utile.</p></div></li>
+          <li><span>02</span><div><strong>Pratiquer</strong><p>Tester avec un cadre, des outils et un accompagnement.</p></div></li>
+          <li><span>03</span><div><strong>Produire</strong><p>Livrer une preuve, recevoir un retour et améliorer.</p></div></li>
         </ol>
       </div>
     </section>
 
-    <section id="ressources" class="content-band">
-      <div class="section-inner">
+    <section class="method section" id="methode">
+      <div class="section-grid">
         <div class="section-heading">
-          <div>
-            <p class="section-kicker">Ressources</p>
-            <h2>Documents disponibles dans le depot.</h2>
-          </div>
+          <div><p class="kicker">La méthode Challenge IA</p><h2>Une chaîne simple, exigeante et humaine.</h2></div>
+          <p>Chaque mission relie l’intention, l’action, le contrôle, le résultat et l’apprentissage.</p>
         </div>
-        <div class="resource-list">
-          <a id="participantDriveLink" href="#" target="_blank" rel="noopener noreferrer">Espace Google Drive des participants — acces reserve</a>
-          <a href="ressources/plan-formation-equipe-kfpm.md">Plan de formation equipe KFPM</a>
-          <a href="ressources/banque-prompts-pub-kfpm.md">Banque de prompts PUB-KFPM</a>
-          <a href="ressources/methode-production-7-etapes.md">Methode de production en 7 etapes</a>
-          <a href="ressources/calendrier-production-30-jours.md">Calendrier de production 30 jours</a>
+        <div class="method-track" aria-label="Les cinq étapes de la méthode">
+          <article><span>01</span><h3>Comprendre</h3><p>Clarifier le besoin, la cible et le résultat attendu.</p></article>
+          <article><span>02</span><h3>Pratiquer</h3><p>Expérimenter avec l’IA et les outils adaptés.</p></article>
+          <article><span>03</span><h3>Produire</h3><p>Créer un livrable professionnel et exploitable.</p></article>
+          <article><span>04</span><h3>Prouver</h3><p>Documenter les choix, contrôles et résultats.</p></article>
+          <article><span>05</span><h3>Valider</h3><p>Faire relire et décider humainement de la suite.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section class="missions section" id="missions">
+      <div class="section-grid">
+        <div class="section-heading mission-heading">
+          <div><p class="kicker">Les 42 missions</p><h2>Votre feuille de route, mission après mission.</h2></div>
+          <p id="missionCount">42 missions dans le programme</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrer les missions">
+          <button class="filter active" type="button" data-phase="all">Toutes</button>
+          <button class="filter" type="button" data-phase="1">Démarrer</button>
+          <button class="filter" type="button" data-phase="2">Produire avec l’IA</button>
+          <button class="filter" type="button" data-phase="3">Agir pour KFPM</button>
+          <button class="filter" type="button" data-phase="4">Collaborer</button>
+          <button class="filter" type="button" data-phase="5">Projet final</button>
+        </div>
+        <div class="mission-grid" id="missionGrid" aria-live="polite"></div>
+        <button class="button button-outline" id="showMore" type="button">Voir toutes les missions</button>
+      </div>
+    </section>
+
+    <section class="tools section">
+      <div class="section-grid tools-grid">
+        <div><p class="kicker">Un écosystème cohérent</p><h2>Les bons outils, au bon moment.</h2><p>Chaque canal possède un rôle clair. Le site public informe ; les espaces privés accompagnent et protègent le travail des participants.</p></div>
+        <div class="tool-cards">
+          <article><b>ZO</b><div><h3>Zoom</h3><p>Démonstrations et corrections en direct.</p></div></article>
+          <article><b>WA</b><div><h3>WhatsApp</h3><p>Rappels et assistance entre les séances.</p></div></article>
+          <article><b>DR</b><div><h3>Drive</h3><p>Supports, modèles et dépôt des livrables.</p></div></article>
+          <article><b>GH</b><div><h3>GitHub privé</h3><p>Collaboration, versions et preuves techniques.</p></div></article>
+          <article><b>CP</b><div><h3>Portail cPanel</h3><p>Accès participant et ressources réservées.</p></div></article>
+          <article><b>ML</b><div><h3>Mailing</h3><p>Convocations, missions et bilans.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="support section" id="accompagnement">
+      <div class="section-grid support-grid">
+        <div>
+          <p class="kicker light">Vous ne progressez pas seul</p>
+          <h2>Un rendez-vous humain chaque semaine.</h2>
+          <p>Le Zoom hebdomadaire permet de démontrer, corriger, répondre aux blocages et valider les apprentissages. Entre les séances, WhatsApp, Drive et le portail maintiennent le lien.</p>
+        </div>
+        <div class="meeting-card">
+          <p class="meeting-label">RENDEZ-VOUS HEBDOMADAIRE</p>
+          <div class="meeting-time"><strong>Mercredi</strong><span>20:00</span><small>GMT+1</small></div>
+          <hr>
+          <p>Le lien de réunion est communiqué uniquement aux participants inscrits.</p>
+          <a class="button button-primary" href="https://clprepas.com/portail-ia-kfpm">Ouvrir le portail participant</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta section">
+      <div class="section-grid cta-inner">
+        <div><p class="kicker">Prêt à relever le challenge ?</p><h2>Votre progression commence par une première mission.</h2></div>
+        <div class="cta-actions"><a class="button button-primary" href="https://clprepas.com/portail-ia-kfpm">Accéder au portail</a><a href="mailto:elhisse@gmail.com">Contacter l’équipe →</a></div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="section-inner footer-inner">
-      <strong>Formation IA KFPM_LN-IA_2026 </strong>
-      <span>Contenu progressif, validation humaine, partage controle.</span>
+    <div class="footer-inner">
+      <div class="brand footer-brand"><span class="brand-mark">IA</span><span><strong>Challenge IA KFPM</strong><small>Apprendre · Produire · Prouver</small></span></div>
+      <p>© 2026 Challenge IA KFPM · Contenu public sans données personnelles.</p>
+      <a href="mailto:elhisse@gmail.com">elhisse@gmail.com</a>
     </div>
   </footer>
 
