@@ -1,60 +1,92 @@
 (function () {
-  const config = window.KFPM_SITE_CONFIG || {};
-  const modules = window.KFPM_MODULES || [];
-  const moduleGrid = document.getElementById("moduleGrid");
-  const moduleCount = document.getElementById("moduleCount");
-  const accessForm = document.getElementById("accessForm");
-  const emailInput = document.getElementById("email");
-  const accessMessage = document.getElementById("accessMessage");
-  const participantDriveLink = document.getElementById("participantDriveLink");
-  const filters = Array.from(document.querySelectorAll("[data-filter]"));
+  "use strict";
 
-  if (participantDriveLink && config.participantDriveUrl) {
-    participantDriveLink.href = config.participantDriveUrl;
+  const phases = window.CHALLENGE_PHASES || [];
+  const missions = window.CHALLENGE_MISSIONS || [];
+  const phaseList = document.getElementById("phaseList");
+  const missionGrid = document.getElementById("missionGrid");
+  const missionCount = document.getElementById("missionCount");
+  const showMore = document.getElementById("showMore");
+  const filters = Array.from(document.querySelectorAll("[data-phase]"));
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navigation = document.getElementById("navigation");
+  let selectedPhase = "all";
+  let expanded = false;
+
+  function element(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
   }
 
-  function normalizeEmail(value) {
-    return String(value || "").trim().toLowerCase();
+  function renderPhases() {
+    const fragment = document.createDocumentFragment();
+    phases.forEach((phase) => {
+      const article = element("article", "phase-card " + phase.color);
+      article.append(element("span", "phase-number", String(phase.id).padStart(2, "0")));
+      const body = element("div", "phase-body");
+      body.append(element("p", "phase-meta", phase.days + " · " + phase.missions));
+      body.append(element("h3", "", phase.title));
+      body.append(element("p", "", phase.text));
+      article.append(body);
+      fragment.append(article);
+    });
+    phaseList.replaceChildren(fragment);
   }
 
-  function renderModules(filter) {
-    const selected = filter || "all";
-    const visibleModules = modules.filter((module) => selected === "all" || module.category === selected);
+  function renderMissions() {
+    const filtered = missions.filter((mission) => selectedPhase === "all" || String(mission.phase) === selectedPhase);
+    const visible = expanded || selectedPhase !== "all" ? filtered : filtered.slice(0, 9);
+    const fragment = document.createDocumentFragment();
 
-    moduleGrid.innerHTML = visibleModules.map((module) => {
-      const pending = module.status !== "disponible";
-      return `
-        <article class="module-card">
-          <h3>${module.title}</h3>
-          <p>${module.summary}</p>
-          <div class="module-meta">
-            <span class="pill">${module.category}</span>
-            <span class="pill">${module.duration}</span>
-            <span class="pill ${pending ? "pending" : ""}">${module.status}</span>
-          </div>
-        </article>
-      `;
-    }).join("");
+    visible.forEach((mission) => {
+      const article = element("article", "mission-card");
+      const top = element("div", "mission-top");
+      top.append(element("span", "mission-id", mission.id));
+      top.append(element("span", "mission-phase", "Phase " + mission.phase));
+      article.append(top);
+      article.append(element("h3", "", mission.title));
+      const label = element("p", "deliverable");
+      label.append(element("span", "", "Livrable"));
+      label.append(document.createTextNode(mission.deliverable));
+      article.append(label);
+      fragment.append(article);
+    });
 
-    moduleCount.textContent = modules.length + " modules references";
+    missionGrid.replaceChildren(fragment);
+    missionCount.textContent = filtered.length + (filtered.length > 1 ? " missions" : " mission") + " dans cette sélection";
+    showMore.hidden = selectedPhase !== "all" || missions.length <= 9;
+    showMore.textContent = expanded ? "Réduire la liste" : "Voir les 42 missions";
   }
-
-  accessForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const email = normalizeEmail(emailInput.value);
-    const requestEmail = config.requestAccessEmail || "";
-    const subject = encodeURIComponent("Demande d'acces Formation IA KFPM");
-    const body = encodeURIComponent("Bonjour,\n\nJe souhaite demander l'acces aux supports reserves de la Formation IA KFPM.\n\nEmail : " + email + "\nNom : \nRole : \nNom d'utilisateur GitHub : \n\nMerci.");
-    accessMessage.innerHTML = "<a href=\"mailto:" + requestEmail + "?subject=" + subject + "&body=" + body + "\">Ouvrir la demande d'acces</a>. Votre adresse n'est pas stockee par ce site.";
-  });
 
   filters.forEach((button) => {
     button.addEventListener("click", () => {
-      filters.forEach((filter) => filter.classList.remove("active"));
-      button.classList.add("active");
-      renderModules(button.dataset.filter);
+      selectedPhase = button.dataset.phase;
+      expanded = false;
+      filters.forEach((item) => item.classList.toggle("active", item === button));
+      renderMissions();
     });
   });
 
-  renderModules("all");
+  showMore.addEventListener("click", () => {
+    expanded = !expanded;
+    renderMissions();
+  });
+
+  menuToggle.addEventListener("click", () => {
+    const open = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!open));
+    navigation.classList.toggle("open", !open);
+  });
+
+  navigation.addEventListener("click", (event) => {
+    if (event.target.closest("a")) {
+      menuToggle.setAttribute("aria-expanded", "false");
+      navigation.classList.remove("open");
+    }
+  });
+
+  renderPhases();
+  renderMissions();
 }());
